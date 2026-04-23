@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, world · Philip's Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="brand">Philip's Blog</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </header>
+
+  <main class="container post">
+
+    <article>
+      <header class="post-header">
+        <h1>Hello, world</h1>
+        <p class="meta">April 23, 2026 · 2 min read</p>
+      </header>
+
+      <p>This is the first post on the blog. I wanted something lightweight. No framework, no build step, no database. Just HTML and CSS, hosted as static files.</p>
+
+      <p>The rule of thumb I follow: every post lives in its own file under the <code>posts/</code> folder. The home page lists the posts, and each card links to the corresponding file. That way the home page stays short, and every post has a clean, shareable URL.</p>
+
+      <h2>Why I like this setup</h2>
+
+      <ul>
+        <li>Every page loads fast because it is a plain HTML file.</li>
+        <li>I can open any post in a browser locally to preview it.</li>
+        <li>Hosting is free on GitHub Pages.</li>
+        <li>There is nothing to break. No runtime, no server.</li>
+      </ul>
+
+      <p>More posts will follow as I get time.</p>
+
+    </article>
+
+    <nav class="post-nav">
+      <a href="../index.html">&larr; Back to all posts</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Philip. Built with plain HTML and CSS.</p>
+  </footer>
+
+</body>
+</html>

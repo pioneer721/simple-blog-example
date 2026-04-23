@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I split my blog into multiple HTML files · Philip's Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="brand">Philip's Blog</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </header>
+
+  <main class="container post">
+
+    <article>
+      <header class="post-header">
+        <h1>Why I split my blog into multiple HTML files</h1>
+        <p class="meta">April 23, 2026 · 4 min read</p>
+      </header>
+
+      <p>When I first started, I dumped everything into a single <code>index.html</code>. The home page, every post, the about section, all in one file. It worked, but the file was getting over a thousand lines, and editing one post meant scrolling past everything else.</p>
+
+      <p>So I split it up. Here is the structure I settled on.</p>
+
+      <pre><code>simple-blog-example/
+├── index.html
+├── posts/
+│   ├── hello-world.html
+│   └── split-html-files.html
+└── css/
+    └── style.css
+</code></pre>
+
+      <h2>Why this is better</h2>
+
+      <p><strong>Edits are local.</strong> Changing one post only touches one file. Less risk of breaking something else.</p>
+
+      <p><strong>Each post has a real URL.</strong> <code>/posts/hello-world.html</code> is shareable. With a single file, you have to use anchor links, which are fragile.</p>
+
+      <p><strong>Browsers load faster.</strong> Each page only carries its own content. The shared CSS file gets cached after the first visit, so navigating between posts feels instant.</p>
+
+      <p><strong>It scales.</strong> Adding a new post means creating one new file in <code>posts/</code> and adding one card to the home page. That is it.</p>
+
+      <h2>The one thing to watch out for</h2>
+
+      <p>If you want the same header and footer on every page, you have to copy the markup into each file. That is a bit of duplication. Two ways to handle it:</p>
+
+      <ul>
+        <li><strong>Copy and paste.</strong> Fine for a small blog. Update all files if the header changes.</li>
+        <li><strong>Load with JavaScript.</strong> Put the header in <code>header.html</code> and fetch it into each page. Cleaner, but adds a tiny bit of complexity.</li>
+      </ul>
+
+      <p>For under twenty posts, copy and paste is simpler and works great.</p>
+
+    </article>
+
+    <nav class="post-nav">
+      <a href="../index.html">&larr; Back to all posts</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Philip. Built with plain HTML and CSS.</p>
+  </footer>
+
+</body>
+</html>
